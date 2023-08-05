@@ -80,7 +80,6 @@ const PostList = () => {
     try {
       const response = await axios.get('http://127.0.0.1:3000/posts');
       setPosts(response.data);
-      console.log(posts)
       setFilteredPosts(response.data);
     } catch (error) {
       console.error('Error fetching posts:', error);
@@ -124,6 +123,8 @@ const PostList = () => {
       <Link className='linkingit' to="/recommended">Recommended Post</Link> 
       <Link className='linkingit' to="/add">Add a post</Link> 
       <Link className='linkingit' to="/search">Search a Post</Link> 
+      <Link className='linkingit draftit'  to="/drafts">My Drafts</Link> 
+      <Link className='linkingit'  to="/payment">Premium Subscription</Link> 
       <h2>Post List</h2>
       <PostFilter handleFilterChange={handleFilterChange} />
       {filteredPosts.map((post) => (
